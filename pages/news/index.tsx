@@ -1,6 +1,13 @@
-import { client } from "../libs/microcms";
+import { client } from "../../libs/microcms";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Layout from "../../components/Layout";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Cards from "../../components/Cards";
+import Sub from "../../components/Sub";
+import Aside from "../../components/Aside";
+import Ad from "../../components/Ad";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +27,25 @@ export async function getStaticProps() {
 export default function Home(news: any) {
   console.log(news.news);
   return (
-    <div>
-      <h1>News</h1>
-      <ul>
+    <Layout>
+      <Header />
+
+      <Sub>
+        <Cards />
+        <Aside>
+          <Ad />
+        </Aside>
+      </Sub>
+
+      {/* <ul>
         {news.news.map((news: any) => (
           <li key={news.id}>
             <Link href={`/news/${news.id}`}>{news.title}</Link>
           </li>
         ))}
-      </ul>
-    </div>
+      </ul> */}
+
+      <Footer />
+    </Layout>
   );
 }
