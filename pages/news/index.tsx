@@ -8,6 +8,7 @@ import Ad from "../../components/Ad";
 import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
+import Pager from "@/components/Pager";
 
 const inter = Inter({ subsets: ["latin"] });
 
