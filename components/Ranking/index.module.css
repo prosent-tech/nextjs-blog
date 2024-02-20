@@ -1,0 +1,117 @@
+@media screen and (min-width: 1160px) {
+  .ranking {
+    padding: 20px 0;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1160px) {
+  .ranking {
+    padding: 20px 0 0;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .ranking {
+    padding: 20px 0 0;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .rankingTitle {
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1160px) {
+  .rankingTitle {
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .rankingTitle {
+    background-color: #eee;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .list {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1160px) {
+  .list {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .link {
+    display: block;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1160px) {
+  .link {
+    display: flex;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .link {
+    display: block;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .ogimage {
+    border-radius: 5px;
+    height: auto;
+    width: 280px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1160px) {
+  .ogimage {
+    border-radius: 5px;
+    height: auto;
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .title {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: 520px) and (max-width: 1160px) {
+  .title {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .title {
+    padding-top: 10px;
+  }
+}

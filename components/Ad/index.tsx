@@ -4,8 +4,8 @@ import styles from "./index.module.css";
 
 export default function Ad() {
   return (
-    <div className="wrapper">
-      <Link href="/news/1">
+    <div className={styles.wrapper}>
+      <Link href="/news/1" className={styles.link}>
         <picture>
           <source />
           <Image

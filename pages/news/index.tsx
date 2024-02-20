@@ -1,13 +1,13 @@
 import { client } from "../../libs/microcms";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 import Layout from "../../components/Layout";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Cards from "../../components/Cards";
+import Contents from "../../components/Contents";
 import Sub from "../../components/Sub";
 import Aside from "../../components/Aside";
 import Ad from "../../components/Ad";
+import Ranking from "@/components/Ranking";
+import Category from "@/components/Category";
+import Tag from "@/components/Tag";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,18 +29,14 @@ export default function Home(news: any) {
   return (
     <Layout>
       <Sub>
-        <Cards />
+        <Contents />
         <Aside>
           <Ad />
+          <Ranking />
+          <Category />
+          <Tag />
         </Aside>
       </Sub>
-      {/* <ul>
-        {news.news.map((news: any) => (
-          <li key={news.id}>
-            <Link href={`/news/${news.id}`}>{news.title}</Link>
-          </li>
-        ))}
-      </ul> */}
     </Layout>
   );
 }
