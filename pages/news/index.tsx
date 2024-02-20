@@ -28,15 +28,12 @@ export default function Home(news: any) {
   console.log(news.news);
   return (
     <Layout>
-      <Header />
-
       <Sub>
         <Cards />
         <Aside>
           <Ad />
         </Aside>
       </Sub>
-
       {/* <ul>
         {news.news.map((news: any) => (
           <li key={news.id}>
@@ -44,8 +41,6 @@ export default function Home(news: any) {
           </li>
         ))}
       </ul> */}
-
-      <Footer />
     </Layout>
   );
 }
