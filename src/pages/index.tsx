@@ -1,4 +1,4 @@
-import { client } from "../libs/microcms";
+import { client } from "../../libs/microcms";
 
 export async function getStaticProps() {
   const data = await client.get({

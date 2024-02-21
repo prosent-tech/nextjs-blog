@@ -1,5 +1,5 @@
-import { client } from "../../libs/microcms";
-import styles from "../../styles/Home.module.css";
+import { client } from "../../../libs/microcms";
+import styles from "../../../styles/Home.module.css";
 import Image from "next/image";
 
 export const getStaticProps = async (context: any) => {
