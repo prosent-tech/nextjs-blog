@@ -1,5 +1,4 @@
 import { client } from "../../libs/microcms";
-import { Inter } from "next/font/google";
 import Layout from "../../components/Layout";
 import Contents from "../../components/Contents";
 import Sub from "../../components/Sub";
@@ -8,9 +7,6 @@ import Ad from "../../components/Ad";
 import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
-import Pager from "@/components/Pager";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export async function getStaticProps() {
   const data = await client.get({
