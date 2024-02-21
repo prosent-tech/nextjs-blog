@@ -41,4 +41,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Deploy on Amplify
 
+aws amplify update-app --app-id xxxxxxx --platform WEB
 aws amplify update-branch --app-id xxxxxxx --branch-name main --framework 'Next.js - SSG'
