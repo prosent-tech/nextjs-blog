@@ -1,7 +1,7 @@
 import { client } from "../../libs/microcms";
 import Layout from "../../components/Layout";
 import Contents from "../../components/Contents";
-import Sub from "../../components/Sub";
+import Divider from "../../components/Divider";
 import Aside from "../../components/Aside";
 import Ad from "../../components/Ad";
 import Ranking from "@/components/Ranking";
@@ -25,7 +25,8 @@ export default function Home(news: any) {
   console.log(news.news);
   return (
     <Layout>
-      <Sub>
+      <Divider>
+        {/* パンクズはどう分けるか */}
         <Contents />
         <Aside>
           <Ad />
@@ -33,7 +34,7 @@ export default function Home(news: any) {
           <Category />
           <Tag />
         </Aside>
-      </Sub>
+      </Divider>
     </Layout>
   );
 }

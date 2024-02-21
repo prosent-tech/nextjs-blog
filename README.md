@@ -42,5 +42,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Deploy on Amplify
 
 Please build on `public.ecr.aws/docker/library/node:18` Docker Platform
-aws amplify update-app --app-id xxxxxxx --platform WEB
-aws amplify update-branch --app-id xxxxxxx --branch-name main --framework 'Next.js - SSG'
+
+export APP_ID=xxxxxxxxxx
+
+aws amplify update-app --app-id ${APP_ID} --platform WEB
+
+aws amplify update-branch --app-id ${APP_ID} --branch-name main --framework 'Next.js - SSG'
