@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    domains: ['localhost', 'images.microcms-assets.io'],
+    unoptimized: true,
+    domains: [
+      "images.microcms-assets.io",
+      "images.blog.microcms.io",
+      "www.mimipo.jp",
+      "mimipo.jp",
+    ],
   },
 };
 
