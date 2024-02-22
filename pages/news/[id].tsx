@@ -1,6 +1,14 @@
+import Layout from "@/components/Layout";
+import Divider from "@/components/Divider";
 import { client } from "../../libs/microcms";
 import styles from "../../styles/Home.module.css";
 import Image from "next/image";
+import Aside from "@/components/Aside";
+import Ad from "@/components/Ad";
+import Ranking from "@/components/Ranking";
+import Category from "@/components/Category";
+import Tag from "@/components/Tag";
+import Content from "@/components/Content";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -25,23 +33,18 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function NewsId(news: any) {
-  console.log(news.news);
+export default function NewsId({ news }: any) {
   return (
-    <main className={styles.main}>
-      <Image
-        src={news.news.image.url}
-        alt={news.news.title}
-        width={news.news.image.width}
-        height={news.news.image.height}
-      />
-      <h1 className={styles.title}>{news.news.title}</h1>
-      <p>「{news.news.category.name}」</p>
-      <p className={styles.publishedAt}>{news.news.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{ __html: `${news.news.content}` }}
-        className={styles.post}
-      ></div>
-    </main>
+    <Layout>
+      <Divider>
+        <Content content={news} />
+        <Aside>
+          <Ad />
+          <Ranking />
+          <Category />
+          <Tag />
+        </Aside>
+      </Divider>
+    </Layout>
   );
 }

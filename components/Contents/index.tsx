@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 export type ContentsProps = {
   contents: Content[];
-}
+};
 
 export type Content = {
   id: string;
@@ -50,20 +50,32 @@ export const Contents: React.FC<ContentsProps> = ({ contents }) => {
                 />
               </picture>
               <dl className={styles.content}>
-                <dt className={styles.title}>
-                  {content.title}
-                </dt>
+                <dt className={styles.title}>{content.title}</dt>
                 <dd>
                   <div className={styles.upper}>
-                    <span className={styles.category}>{content.category.name}</span>
+                    <span className={styles.category}>
+                      {content.category.name}
+                    </span>
                   </div>
                   <div className={styles.meta}>
                     <span className={styles.timestamp}>
-                      <Image src="https://blog.microcms.io/images/icon_clock.svg" width={20} height={20} alt="" />
-                      <time dateTime={content.publishedAt}>{content.publishedAt}</time>
+                      <Image
+                        src="https://blog.microcms.io/images/icon_clock.svg"
+                        width={20}
+                        height={20}
+                        alt=""
+                      />
+                      <time dateTime={content.publishedAt}>
+                        {content.publishedAt}
+                      </time>
                     </span>
                     <span className={styles.author}>
-                      <Image src="https://blog.microcms.io/images/icon_author.svg" width={20} height={20} alt="" />
+                      <Image
+                        src="https://blog.microcms.io/images/icon_author.svg"
+                        width={20}
+                        height={20}
+                        alt=""
+                      />
                       {content.author}
                     </span>
                   </div>
@@ -72,7 +84,6 @@ export const Contents: React.FC<ContentsProps> = ({ contents }) => {
             </Link>
           </li>
         ))}
-
       </ul>
       {/* ページネーション */}
       <div className={styles.pagination}>
