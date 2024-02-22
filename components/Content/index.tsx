@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
 
@@ -20,10 +21,10 @@ export default function Content({ content }: any) {
       {/* パンクズ */}
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
-          <a href="">記事一覧</a>
+          <Link href="/media">記事一覧</Link>
         </li>
         <li className={styles.breadcrumbList}>
-          <a href="">導入事例</a>
+          <Link href={`/media/category/${content.category.id}`}>{content.category.name}</Link>
         </li>
       </ul>
 
