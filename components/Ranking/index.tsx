@@ -8,7 +8,7 @@ export default function Ranking() {
       <h1 className={styles.rankingTitle}>人気の記事</h1>
       <ul className={styles.list}>
         <li>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/1" className={styles.link}>
             <picture>
               <source />
               <Image
@@ -26,7 +26,7 @@ export default function Ranking() {
         </li>
         {/*  */}
         <li>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/1" className={styles.link}>
             <picture>
               <source />
               <Image
@@ -43,7 +43,7 @@ export default function Ranking() {
           </Link>
         </li>
         <li>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/1" className={styles.link}>
             <picture>
               <source />
               <Image

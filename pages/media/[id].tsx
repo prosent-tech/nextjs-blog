@@ -16,7 +16,6 @@ export const getStaticProps = async (context: any) => {
     endpoint: "news",
     contentId: id,
   });
-
   return {
     props: {
       news: data,

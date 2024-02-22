@@ -7,22 +7,22 @@ export default function Category() {
       <h1 className={styles.categoryTitle}>カテゴリ一覧</h1>
       <ul>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/category/1" className={styles.link}>
             イソトレチノイン
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/category/1" className={styles.link}>
             イソトレチノイン
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/category/1" className={styles.link}>
             イソトレチノイン
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/category/1" className={styles.link}>
             イソトレチノイン
           </Link>
         </li>

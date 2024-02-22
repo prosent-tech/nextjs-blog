@@ -7,22 +7,22 @@ export default function Tag() {
       <h1 className={styles.tagTitle}>タグ一覧</h1>
       <ul className={styles.unorderedList}>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/tag/1" className={styles.link}>
             おでこニキビ
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/tag/1" className={styles.link}>
             ニキビ跡
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/tag/1" className={styles.link}>
             イソトレチノイン
           </Link>
         </li>
         <li className={styles.list}>
-          <Link href="/news/1" className={styles.link}>
+          <Link href="/media/tag/1" className={styles.link}>
             化粧水
           </Link>
         </li>
