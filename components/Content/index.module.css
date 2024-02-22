@@ -113,7 +113,16 @@
   }
 }
 
-/* content */
+@media screen and (min-width: 1160px) {
+  .container {
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    flex: 1;
+    margin-left: 80px;
+    position: relative;
+  }
+}
+
 @media screen and (min-width: 820px) and (max-width: 1160px) {
   .container {
     -webkit-font-smoothing: antialiased;
