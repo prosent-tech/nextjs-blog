@@ -1,31 +1,18 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 
-export default function Tag() {
+export default function Tag({ tag }: { tag: any }) {
   return (
     <div className={styles.tag}>
       <h1 className={styles.tagTitle}>タグ一覧</h1>
       <ul className={styles.unorderedList}>
-        <li className={styles.list}>
-          <Link href="/media/tag/1" className={styles.link}>
-            おでこニキビ
-          </Link>
-        </li>
-        <li className={styles.list}>
-          <Link href="/media/tag/1" className={styles.link}>
-            ニキビ跡
-          </Link>
-        </li>
-        <li className={styles.list}>
-          <Link href="/media/tag/1" className={styles.link}>
-            イソトレチノイン
-          </Link>
-        </li>
-        <li className={styles.list}>
-          <Link href="/media/tag/1" className={styles.link}>
-            化粧水
-          </Link>
-        </li>
+        {tag.map((tag: any) => (
+          <li className={styles.list} key={tag.id}>
+            <Link href={`/media/tag/${tag.id}`} className={styles.link}>
+              {tag.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -9,19 +9,24 @@ import Category from "@/components/Category";
 import Tag from "@/components/Tag";
 
 export async function getStaticProps() {
-  const data = await client.get({
+  const newsData = await client.get({
     endpoint: "news",
     queries: { offset: 0, limit: 5 },
   });
+  const categoryData = await client.get({ endpoint: "categories" });
+  const tagData = await client.get({ endpoint: "tags" });
   return {
     props: {
-      news: data.contents,
-      totalCount: data.totalCount,
+      news: newsData.contents,
+      category: categoryData.contents,
+      tag: tagData.contents,
+      totalCount: newsData.totalCount,
     },
   };
 }
 
-export default function Home({ news, totalCount }: any) {
+export default function Home({ news, category, tag, totalCount }: any) {
+  console.log(news);
   return (
     <Layout>
       <Divider>
@@ -29,8 +34,8 @@ export default function Home({ news, totalCount }: any) {
         <Aside>
           <Ad />
           <Ranking />
-          <Category />
-          <Tag />
+          <Category category={category} />
+          <Tag tag={tag} />
         </Aside>
       </Divider>
     </Layout>
