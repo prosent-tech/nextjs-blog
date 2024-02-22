@@ -26,7 +26,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ news, category, tag, totalCount }: any) {
-  console.log(news);
   return (
     <Layout>
       <Divider>

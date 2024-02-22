@@ -12,14 +12,18 @@ const PER_PAGE = 5;
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const data = await client.get({
+  const newsData = await client.get({
     endpoint: "news",
     queries: { offset: (id - 1) * 5, limit: 5 },
   });
+  const categoryData = await client.get({ endpoint: "categories" });
+  const tagData = await client.get({ endpoint: "tags" });
   return {
     props: {
-      news: data.contents,
-      totalCount: data.totalCount,
+      news: newsData.contents,
+      category: categoryData.contents,
+      tag: tagData.contents,
+      totalCount: newsData.totalCount,
     },
   };
 };
@@ -34,7 +38,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export default function MediaId({ news, totalCount }: any) {
+export default function MediaId({ news, category, tag, totalCount }: any) {
   console.log(news);
   return (
     <Layout>
@@ -43,8 +47,8 @@ export default function MediaId({ news, totalCount }: any) {
         <Aside>
           <Ad />
           <Ranking />
-          <Category />
-          <Tag />
+          <Category category={category} />
+          <Tag tag={tag} />
         </Aside>
       </Divider>
     </Layout>
