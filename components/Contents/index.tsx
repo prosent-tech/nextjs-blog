@@ -8,6 +8,11 @@ export type ContentsProps = {
   totalCount: number;
 };
 
+export type Tag = {
+  id: string;
+  name: string;
+};
+
 export type Content = {
   id: string;
   title: string;
@@ -23,6 +28,7 @@ export type Content = {
     id: string;
     name: string;
   };
+  tags: Tag[];
 };
 
 export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
@@ -58,6 +64,13 @@ export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
                     <span className={styles.category}>
                       {content.category.name}
                     </span>
+                    {content.tags.map((tag) => (
+                      <ul className={styles.tag} key={tag.id}>
+                        <li>
+                          <span>{tag.name}</span>
+                        </li>
+                      </ul>
+                    ))}
                   </div>
                   <div className={styles.meta}>
                     <span className={styles.timestamp}>
