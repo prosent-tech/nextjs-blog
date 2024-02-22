@@ -18,7 +18,8 @@
 
 @media screen and (min-width: 1160px) {
   .categoryTitle {
-    background-color: #eee;
+    color: #fff;
+    background-color: #067289;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -29,7 +30,8 @@
 
 @media screen and (min-width: 820px) and (max-width: 1160px) {
   .categoryTitle {
-    background-color: #eee;
+    color: #fff;
+    background-color: #067289;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -40,7 +42,8 @@
 
 @media screen and (max-width: 820px) {
   .categoryTitle {
-    background-color: #eee;
+    color: #fff;
+    background-color: #067289;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;

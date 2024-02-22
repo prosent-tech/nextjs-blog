@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
+import Pagination from "../Pagination";
 
 export type ContentsProps = {
   contents: Content[];
+  totalCount: number;
 };
 
 export type Content = {
@@ -23,7 +25,7 @@ export type Content = {
   };
 };
 
-export const Contents: React.FC<ContentsProps> = ({ contents }) => {
+export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
   contents.map((content) => {
     content.publishedAt = new Date(content.publishedAt).toLocaleDateString();
   }, []);
@@ -85,34 +87,7 @@ export const Contents: React.FC<ContentsProps> = ({ contents }) => {
           </li>
         ))}
       </ul>
-      {/* ページネーション */}
-      <div className={styles.pagination}>
-        <ul className={styles.pager}>
-          <li className={`${styles.page} ${styles.active}`}>
-            <Link href="/news/1">1</Link>
-          </li>
-          <li className={styles.page}>
-            <Link href="/news/1">2</Link>
-          </li>
-          <li className={styles.page}>
-            <Link href="/news/1">3</Link>
-          </li>
-          <li className="omission">...</li>
-          <li className={styles.page}>
-            <Link href="/news/1">38</Link>
-          </li>
-          <li className={`${styles.page} ${styles.arrow}`}>
-            <Link href="/news/1">
-              <Image
-                src="https://blog.microcms.io/images/icon_arrow_right.svg"
-                width="20"
-                height="24"
-                alt=""
-              />
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <Pagination totalCount={totalCount} />
     </div>
   );
 };

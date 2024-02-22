@@ -11,21 +11,21 @@ import Tag from "@/components/Tag";
 export async function getStaticProps() {
   const data = await client.get({
     endpoint: "news",
-    queries: { limit: 10 },
+    queries: { offset: 0, limit: 5 },
   });
   return {
     props: {
       news: data.contents,
+      totalCount: data.totalCount,
     },
   };
 }
 
-export default function Home({ news }: any) {
-  console.log(news);
+export default function Home({ news, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Contents contents={news} />
+        <Contents contents={news} totalCount={totalCount} />
         <Aside>
           <Ad />
           <Ranking />
