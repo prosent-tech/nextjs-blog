@@ -38,7 +38,7 @@ export const Contents: React.FC<ContentsProps> = ({ contents }) => {
       <ul className={styles.unorderedList}>
         {contents.map((content, index) => (
           <li className={styles.list} key={index}>
-            <Link href={`/news/${content.id}`} className={styles.link}>
+            <Link href={`/media/${content.id}`} className={styles.link}>
               <picture>
                 <source />
                 <Image

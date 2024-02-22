@@ -1,9 +1,6 @@
 import { client } from "../../libs/microcms";
 import Layout from "../../components/Layout";
 import { Contents } from "../../components/Contents";
-
-import { ContentsProps } from "../../components/Contents";
-
 import Divider from "../../components/Divider";
 import Aside from "../../components/Aside";
 import Ad from "../../components/Ad";
