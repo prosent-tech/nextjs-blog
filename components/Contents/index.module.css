@@ -189,9 +189,41 @@
   white-space: nowrap;
 }
 
+@media screen and (min-width: 600px) {
+  .timestamp img {
+    height: 16px;
+    margin-right: 6px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timestamp img {
+    height: 14px;
+    margin-right: 6px;
+    width: auto;
+  }
+}
+
 .author {
   align-items: center;
   color: #616269;
   display: inline-flex;
   white-space: nowrap;
+}
+
+@media screen and (min-width: 600px) {
+  .author img {
+    height: 16px;
+    margin-right: 6px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .author img {
+    height: 14px;
+    margin-right: 6px;
+    width: auto;
+  }
 }

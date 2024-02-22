@@ -1,6 +1,9 @@
 import { client } from "../../libs/microcms";
 import Layout from "../../components/Layout";
-import Contents from "../../components/Contents";
+import { Contents } from "../../components/Contents";
+
+import {ContentsProps} from "../../components/Contents";
+
 import Divider from "../../components/Divider";
 import Aside from "../../components/Aside";
 import Ad from "../../components/Ad";
@@ -13,7 +16,6 @@ export async function getStaticProps() {
     endpoint: "news",
     queries: { limit: 10 },
   });
-  console.log(data.contents);
   return {
     props: {
       news: data.contents,
@@ -21,13 +23,12 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home(news: any) {
-  console.log(news.news);
+export default function Home({ news }: any) {
+  console.log(news);
   return (
     <Layout>
       <Divider>
-        {/* パンクズはどう分けるか */}
-        <Contents />
+        <Contents contents={news} />
         <Aside>
           <Ad />
           <Ranking />
