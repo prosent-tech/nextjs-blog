@@ -24,7 +24,9 @@ export default function Content({ content }: any) {
           <Link href="/media">記事一覧</Link>
         </li>
         <li className={styles.breadcrumbList}>
-          <Link href={`/media/category/${content.category.id}`}>{content.category.name}</Link>
+          <Link href={`/media/category/${content.category.id}`}>
+            {content.category.name}
+          </Link>
         </li>
       </ul>
 
