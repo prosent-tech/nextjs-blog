@@ -9,6 +9,7 @@ import Tag from "@/components/Tag";
 import { Articles } from "@/components/Articles";
 import { useRouter } from "next/router";
 import Content from "@/components/Content";
+import Pagination from "@/components/Pagination";
 
 const PER_PAGE = 5;
 
@@ -52,6 +53,7 @@ export default function MediaId({ news, category, tag, totalCount }: any) {
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
+          <Pagination totalCount={totalCount} />
         </Content>
         <Aside>
           <Ad />

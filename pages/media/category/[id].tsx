@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import Ranking from "@/components/Ranking";
 import Tag from "@/components/Tag";
 import Content from "@/components/Content";
+import Pagination from "@/components/Pagination";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -43,6 +44,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
           <h1>記事がありません</h1>
           <Content>
             <Articles articles={news} totalCount={totalCount} />
+            <Pagination totalCount={totalCount} />
           </Content>
           <Aside>
             <Ad />
@@ -60,6 +62,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
+          <Pagination totalCount={totalCount} />
         </Content>
         <Aside>
           <Ad />
