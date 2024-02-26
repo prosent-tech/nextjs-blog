@@ -1,6 +1,6 @@
 import { client } from "../../libs/microcms";
 import Layout from "../../components/Layout";
-import { Contents } from "../../components/Contents";
+import { Articles } from "../../components/Articles";
 import Divider from "../../components/Divider";
 import Aside from "../../components/Aside";
 import Ad from "../../components/Ad";
@@ -29,7 +29,7 @@ export default function Home({ news, category, tag, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Contents contents={news} totalCount={totalCount} />
+        <Articles articles={news} totalCount={totalCount} />
         <Aside>
           <Ad />
           <Ranking />

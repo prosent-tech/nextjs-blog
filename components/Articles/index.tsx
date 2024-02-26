@@ -3,8 +3,8 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Pagination from "../Pagination";
 
-export type ContentsProps = {
-  contents: Content[];
+export type ArticlesProps = {
+  articles: Article[];
   totalCount: number;
 };
 
@@ -13,7 +13,7 @@ export type Tag = {
   name: string;
 };
 
-export type Content = {
+export type Article = {
   id: string;
   title: string;
   subtitle: string;
@@ -31,9 +31,9 @@ export type Content = {
   tags: Tag[];
 };
 
-export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
-  contents.map((content) => {
-    content.publishedAt = new Date(content.publishedAt).toLocaleDateString();
+export const Articles: React.FC<ArticlesProps> = ({ articles, totalCount }) => {
+  articles.map((article) => {
+    article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
   }, []);
 
   return (
@@ -44,13 +44,13 @@ export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
         </li>
       </ul>
       <ul className={styles.unorderedList}>
-        {contents.map((content, index) => (
+        {articles.map((article, index) => (
           <li className={styles.list} key={index}>
-            <Link href={`/media/${content.id}`} className={styles.link}>
+            <Link href={`/media/${article.id}`} className={styles.link}>
               <picture>
                 <source />
                 <Image
-                  src={content.image.url}
+                  src={article.image.url}
                   alt="news1"
                   width={1200}
                   height={630}
@@ -58,13 +58,13 @@ export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
                 />
               </picture>
               <dl className={styles.content}>
-                <dt className={styles.title}>{content.title}</dt>
+                <dt className={styles.title}>{article.title}</dt>
                 <dd>
                   <div className={styles.upper}>
                     <span className={styles.category}>
-                      {content.category.name}
+                      {article.category.name}
                     </span>
-                    {content.tags.map((tag) => (
+                    {article.tags.map((tag) => (
                       <ul className={styles.tag} key={tag.id}>
                         <li>
                           <span>{tag.name}</span>
@@ -80,8 +80,8 @@ export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
                         height={20}
                         alt=""
                       />
-                      <time dateTime={content.publishedAt}>
-                        {content.publishedAt}
+                      <time dateTime={article.publishedAt}>
+                        {article.publishedAt}
                       </time>
                     </span>
                     <span className={styles.author}>
@@ -91,7 +91,7 @@ export const Contents: React.FC<ContentsProps> = ({ contents, totalCount }) => {
                         height={20}
                         alt=""
                       />
-                      {content.author}
+                      {article.author}
                     </span>
                   </div>
                 </dd>

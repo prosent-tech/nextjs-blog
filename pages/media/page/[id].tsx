@@ -6,7 +6,7 @@ import Ad from "@/components/Ad";
 import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
-import { Contents } from "@/components/Contents";
+import { Articles } from "@/components/Articles";
 
 const PER_PAGE = 5;
 
@@ -43,7 +43,7 @@ export default function MediaId({ news, category, tag, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Contents contents={news} totalCount={totalCount} />
+        <Articles articles={news} totalCount={totalCount} />
         <Aside>
           <Ad />
           <Ranking />

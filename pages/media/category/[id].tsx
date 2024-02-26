@@ -2,7 +2,7 @@ import { client } from "../../../libs/microcms";
 import Ad from "@/components/Ad";
 import Aside from "@/components/Aside";
 import Category from "@/components/Category";
-import { Contents } from "@/components/Contents";
+import { Articles } from "@/components/Articles";
 import Divider from "@/components/Divider";
 import Layout from "@/components/Layout";
 import Ranking from "@/components/Ranking";
@@ -40,7 +40,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
       <Layout>
         <Divider>
           <h1>記事がありません</h1>
-          <Contents contents={news} totalCount={totalCount} />
+          <Articles articles={news} totalCount={totalCount} />
           <Aside>
             <Ad />
             <Ranking />
@@ -55,7 +55,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Contents contents={news} totalCount={totalCount} />
+        <Articles articles={news} totalCount={totalCount} />
         <Aside>
           <Ad />
           <Ranking />

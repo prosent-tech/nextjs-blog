@@ -2,30 +2,30 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
 
-export default function Content({ content }: any) {
-  content.publishedAt = new Date(content.publishedAt).toLocaleDateString();
+export default function Article({ article }: any) {
+  article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
   return (
     <article className={styles.content}>
       <div className={styles.ogimageWrap}>
         <picture>
           <source />
           <Image
-            src={content.image.url}
-            alt={content.title}
-            width={content.image.width}
-            height={content.image.height}
+            src={article.image.url}
+            alt={article.title}
+            width={article.image.width}
+            height={article.image.height}
             className={styles.ogimage}
           />
         </picture>
       </div>
-      {/* パンクズ */}
+      
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
           <Link href="/media">記事一覧</Link>
         </li>
         <li className={styles.breadcrumbList}>
-          <Link href={`/media/category/${content.category.id}`}>
-            {content.category.name}
+          <Link href={`/media/category/${article.category.id}`}>
+            {article.category.name}
           </Link>
         </li>
       </ul>
@@ -33,10 +33,9 @@ export default function Content({ content }: any) {
       <div className={styles.main}>
         <div className={styles.share}></div>
         <div className={styles.container}>
-          {/* タイトル & 詳細 */}
-          <h1 className={styles.title}>{content.title}</h1>
+          <h1 className={styles.title}>{article.title}</h1>
           <div className={styles.upper}>
-            <span className={styles.category}>{content.category.name}</span>
+            <span className={styles.category}>{article.category.name}</span>
           </div>
           <div className={styles.meta}>
             <span className={styles.timestamp}>
@@ -46,7 +45,7 @@ export default function Content({ content }: any) {
                 height={20}
                 alt=""
               />
-              <time dateTime={content.publishedAt}>{content.publishedAt}</time>
+              <time dateTime={article.publishedAt}>{article.publishedAt}</time>
             </span>
             <span className={styles.author}>
               <Image
@@ -55,14 +54,11 @@ export default function Content({ content }: any) {
                 height={20}
                 alt=""
               />
-              {content.author}
+              {article.author}
             </span>
           </div>
-          {/* 目次 */}
-
-          {/* Wrapper */}
           <div
-            dangerouslySetInnerHTML={{ __html: `${content.content}` }}
+            dangerouslySetInnerHTML={{ __html: `${article.content}` }}
             className={styles.post}
           ></div>
         </div>
