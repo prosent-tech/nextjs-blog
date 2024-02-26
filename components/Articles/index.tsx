@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
-import Pagination from "../Pagination";
 
 export type ArticlesProps = {
   articles: Article[];
@@ -31,13 +30,13 @@ export type Article = {
   tags: Tag[];
 };
 
-export const Articles: React.FC<ArticlesProps> = ({ articles, totalCount }) => {
+export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
   articles.map((article) => {
     article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
   }, []);
 
   return (
-    <div className={styles.contents}>
+    <div className={styles.articles}>
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
           <a href="">記事一覧</a>
@@ -100,7 +99,6 @@ export const Articles: React.FC<ArticlesProps> = ({ articles, totalCount }) => {
           </li>
         ))}
       </ul>
-      <Pagination totalCount={totalCount} />
     </div>
   );
 };

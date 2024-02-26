@@ -7,6 +7,8 @@ import Ad from "../../components/Ad";
 import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
+import Content from "@/components/Content";
+import Pagination from "@/components/Pagination";
 
 export async function getStaticProps() {
   const newsData = await client.get({
@@ -29,7 +31,10 @@ export default function Home({ news, category, tag, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Articles articles={news} totalCount={totalCount} />
+        <Content>
+          <Articles articles={news} totalCount={totalCount} />
+          <Pagination totalCount={totalCount} />
+        </Content>
         <Aside>
           <Ad />
           <Ranking />

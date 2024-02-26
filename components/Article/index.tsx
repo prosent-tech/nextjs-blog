@@ -18,7 +18,7 @@ export default function Article({ article }: any) {
           />
         </picture>
       </div>
-      
+
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
           <Link href="/media">記事一覧</Link>

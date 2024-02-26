@@ -7,6 +7,7 @@ import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
 import Article from "@/components/Article";
+import Content from "@/components/Content";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -35,7 +36,9 @@ export default function MediaId({ news, category, tag }: any) {
   return (
     <Layout>
       <Divider>
-        <Article article={news} />
+        <Content>
+          <Article article={news} />
+        </Content>
         <Aside>
           <Ad />
           <Ranking />

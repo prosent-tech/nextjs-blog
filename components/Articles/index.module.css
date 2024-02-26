@@ -1,10 +1,3 @@
-/* これはContainer */
-@media screen and (min-width: 1160px) {
-  .contents {
-    width: 820px;
-  }
-}
-
 /* パンクズ */
 .breadcrumb {
   display: flex;

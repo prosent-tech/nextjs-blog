@@ -4,7 +4,15 @@ import styles from "./index.module.css";
 
 const PER_PAGE = 5;
 
-export default function Pagination({ totalCount }: { totalCount: number }) {
+export default function Pagination({
+  totalCount,
+  // currentPage,
+}: {
+  totalCount: number;
+  // currentPage: number;
+}) {
+  // console.log("currentPage", currentPage);
+
   const range = (start: any, end: any) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
 

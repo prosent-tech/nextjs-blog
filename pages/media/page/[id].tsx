@@ -7,6 +7,8 @@ import Ranking from "@/components/Ranking";
 import Category from "@/components/Category";
 import Tag from "@/components/Tag";
 import { Articles } from "@/components/Articles";
+import { useRouter } from "next/router";
+import Content from "@/components/Content";
 
 const PER_PAGE = 5;
 
@@ -39,11 +41,18 @@ export const getStaticPaths = async () => {
 };
 
 export default function MediaId({ news, category, tag, totalCount }: any) {
+  const router = useRouter();
+  const { id } = router.query;
+  console.log("id", id);
+
   console.log(news);
+
   return (
     <Layout>
       <Divider>
-        <Articles articles={news} totalCount={totalCount} />
+        <Content>
+          <Articles articles={news} totalCount={totalCount} />
+        </Content>
         <Aside>
           <Ad />
           <Ranking />

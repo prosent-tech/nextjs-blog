@@ -7,6 +7,7 @@ import Divider from "@/components/Divider";
 import Layout from "@/components/Layout";
 import Ranking from "@/components/Ranking";
 import Tag from "@/components/Tag";
+import Content from "@/components/Content";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -36,7 +37,9 @@ export default function TagId({ news, category, tag, totalCount }: any) {
   return (
     <Layout>
       <Divider>
-        <Articles articles={news} totalCount={totalCount} />
+        <Content>
+          <Articles articles={news} totalCount={totalCount} />
+        </Content>
         <Aside>
           <Ad />
           <Ranking />
