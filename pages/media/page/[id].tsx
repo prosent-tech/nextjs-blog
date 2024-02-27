@@ -44,16 +44,14 @@ export const getStaticPaths = async () => {
 export default function MediaId({ news, category, tag, totalCount }: any) {
   const router = useRouter();
   const { id } = router.query;
-  console.log("id", id);
-
-  console.log(news);
+  const idNumber = Number(id);
 
   return (
     <Layout>
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} />
+          <Pagination totalCount={totalCount} currentPage={idNumber} />
         </Content>
         <Aside>
           <Ad />

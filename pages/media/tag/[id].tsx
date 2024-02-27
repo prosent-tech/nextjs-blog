@@ -40,7 +40,7 @@ export default function TagId({ news, category, tag, totalCount }: any) {
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} />
+          <Pagination totalCount={totalCount} currentPage={1} />
         </Content>
         <Aside>
           <Ad />
