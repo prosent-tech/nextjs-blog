@@ -1,4 +1,4 @@
-import { client } from "../../../libs/microcms";
+import { client } from "../../../../libs/microcms";
 import Ad from "@/components/Ad";
 import Aside from "@/components/Aside";
 import Category from "@/components/Category";
@@ -11,10 +11,10 @@ import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
 
 export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+  const categoryId = context.params.categoryId;
   const newsData = await client.get({
     endpoint: "news",
-    queries: { filters: `category[equals]${id}` },
+    queries: { filters: `category[equals]${categoryId}` },
   });
   const categoryData = await client.get({ endpoint: "categories" });
   const tagData = await client.get({ endpoint: "tags" });
@@ -62,7 +62,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} currentPage={0} />
+          <Pagination totalCount={totalCount} currentPage={1} />
         </Content>
         <Aside>
           <Ad />

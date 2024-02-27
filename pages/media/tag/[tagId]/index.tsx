@@ -1,4 +1,4 @@
-import { client } from "../../../libs/microcms";
+import { client } from "../../../../libs/microcms";
 import Ad from "@/components/Ad";
 import Aside from "@/components/Aside";
 import Category from "@/components/Category";
@@ -11,10 +11,10 @@ import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
 
 export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+  const tagId = context.params.tagId;
   const newsData = await client.get({
     endpoint: "news",
-    queries: { filters: `tags[contains]${id}` },
+    queries: { filters: `tags[contains]${tagId}` },
   });
   const categoryData = await client.get({ endpoint: "categories" });
   const tagData = await client.get({ endpoint: "tags" });

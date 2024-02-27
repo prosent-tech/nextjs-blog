@@ -17,7 +17,7 @@ export const getStaticProps = async (context: any) => {
   const id = context.params.id;
   const newsData = await client.get({
     endpoint: "news",
-    queries: { offset: (id - 1) * 5, limit: 5 },
+    queries: { offset: (id - 1) * PER_PAGE, limit: PER_PAGE },
   });
   const categoryData = await client.get({ endpoint: "categories" });
   const tagData = await client.get({ endpoint: "tags" });
