@@ -29,7 +29,10 @@ export default function Pagination({
   } else if (currentPage === finalPage) {
     rangeArray = [1, "..."].concat(range(finalPage - 2, finalPage));
   } else {
-    rangeArray = [1, "..."].concat(range(currentPage - 1, currentPage + 1), ["...", finalPage]);
+    rangeArray = [1, "..."].concat(range(currentPage - 1, currentPage + 1), [
+      "...",
+      finalPage,
+    ]);
   }
 
   return (
@@ -37,7 +40,7 @@ export default function Pagination({
       <ul className={styles.pager}>
         {currentPage !== 1 ? (
           <li className={`${styles.page} ${styles.arrow}`}>
-            <Link href={`/media/page/${currentPage-1}`}>
+            <Link href={`/media/page/${currentPage - 1}`}>
               <Image
                 src="https://blog.microcms.io/images/icon_arrow_left.svg"
                 width="20"
@@ -48,17 +51,24 @@ export default function Pagination({
           </li>
         ) : null}
 
-        {rangeArray.map((number, index) => (
-          number !== "..." ? 
-          <li key={index} className={`${styles.page} ${currentPage === number ? `${styles.active}` : ""}`}>
-            <Link href={`/media/page/${number}`}>{number}</Link>
-          </li>
-          : <li key={index} className={styles.omission}>...</li>
-        ))}
+        {rangeArray.map((number, index) =>
+          number !== "..." ? (
+            <li
+              key={index}
+              className={`${styles.page} ${currentPage === number ? `${styles.active}` : ""}`}
+            >
+              <Link href={`/media/page/${number}`}>{number}</Link>
+            </li>
+          ) : (
+            <li key={index} className={styles.omission}>
+              ...
+            </li>
+          ),
+        )}
 
         {currentPage !== finalPage ? (
           <li className={`${styles.page} ${styles.arrow}`}>
-            <Link href={`/media/page/${currentPage+1}`}>
+            <Link href={`/media/page/${currentPage + 1}`}>
               <Image
                 src="https://blog.microcms.io/images/icon_arrow_right.svg"
                 width="20"
