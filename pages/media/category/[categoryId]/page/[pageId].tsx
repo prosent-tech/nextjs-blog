@@ -36,17 +36,9 @@ export const getStaticProps = async (context: any) => {
 };
 
 export const getStaticPaths = async () => {
-  let totalCount: number = 0;
-  const categoryData = await client.get({ endpoint: "categories" });
-  for (const content of categoryData.contents) {
-    const newsData = await client.get({
-      endpoint: "news",
-      queries: { filters: `category[equals]${content.id}` },
-    });
-    totalCount += parseInt(newsData.totalCount);
-  }
+  const categoryData = await client.getAllContents({ endpoint: "categories" });
   const categoryPages = [];
-  for (const content of categoryData.contents) {
+  for (const content of categoryData) {
     const newsData = await client.get({
       endpoint: "news",
       queries: { filters: `category[equals]${content.id}` },
