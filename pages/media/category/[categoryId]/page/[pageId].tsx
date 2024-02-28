@@ -52,7 +52,6 @@ export const getStaticPaths = async () => {
 };
 
 export default function TagPageId({ news, category, tag, totalCount }: any) {
-      console.log(news);
   return (
     <Layout>
       <Divider>

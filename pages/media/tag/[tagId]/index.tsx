@@ -35,6 +35,24 @@ export const getStaticPaths = async () => {
 };
 
 export default function TagId({ news, category, tag, totalCount }: any) {
+  if (news.length === 0) {
+    return (
+      <Layout>
+        <Divider>
+          <Content>
+            <h1>記事がありません</h1>
+          </Content>
+          <Aside>
+            <Ad />
+            <Ranking />
+            <Category category={category} />
+            <Tag tag={tag} />
+          </Aside>
+        </Divider>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <Divider>

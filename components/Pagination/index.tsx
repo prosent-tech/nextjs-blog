@@ -66,7 +66,7 @@ export default function Pagination({
           ),
         )}
 
-        {currentPage !== finalPage ? (
+        {currentPage !== finalPage && totalCount/PER_PAGE > 1 ? (
           <li className={`${styles.page} ${styles.arrow}`}>
             <Link href={`/media/page/${currentPage + 1}`}>
               <Image

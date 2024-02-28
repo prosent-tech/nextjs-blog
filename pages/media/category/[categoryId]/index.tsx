@@ -41,10 +41,8 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
     return (
       <Layout>
         <Divider>
-          <h1>記事がありません</h1>
           <Content>
-            <Articles articles={news} totalCount={totalCount} />
-            <Pagination totalCount={totalCount} currentPage={1} />
+            <h1>記事がありません</h1>
           </Content>
           <Aside>
             <Ad />
