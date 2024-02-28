@@ -9,6 +9,8 @@ import Category from "@/components/Category";
 import Tag from "@/components/Tag";
 import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
+import { usePathname } from "next/navigation";
+import { getPathname } from "../../libs/utils";
 
 export async function getStaticProps() {
   const newsData = await client.get({
@@ -28,12 +30,19 @@ export async function getStaticProps() {
 }
 
 export default function Home({ news, category, tag, totalCount }: any) {
+  let pathname = usePathname();
+  pathname = getPathname(pathname);
+
   return (
     <Layout>
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} currentPage={1} />
+          <Pagination
+            totalCount={totalCount}
+            currentPage={1}
+            pathname={pathname}
+          />
         </Content>
         <Aside>
           <Ad />

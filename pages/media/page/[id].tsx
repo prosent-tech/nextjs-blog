@@ -10,6 +10,8 @@ import { Articles } from "@/components/Articles";
 import { useRouter } from "next/router";
 import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
+import { usePathname } from "next/navigation";
+import { getPathname } from "@/libs/utils";
 
 const PER_PAGE = 5;
 
@@ -44,14 +46,21 @@ export const getStaticPaths = async () => {
 export default function MediaId({ news, category, tag, totalCount }: any) {
   const router = useRouter();
   const { id } = router.query;
-  const idNumber = Number(id);
+  const currentPage = Number(id);
+
+  let pathname = usePathname();
+  pathname = getPathname(pathname);
 
   return (
     <Layout>
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} currentPage={idNumber} />
+          <Pagination
+            totalCount={totalCount}
+            currentPage={currentPage}
+            pathname={pathname}
+          />
         </Content>
         <Aside>
           <Ad />

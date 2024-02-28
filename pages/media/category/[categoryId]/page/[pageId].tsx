@@ -9,6 +9,9 @@ import Ranking from "@/components/Ranking";
 import Tag from "@/components/Tag";
 import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
+import { getPathname } from "@/libs/utils";
 
 const PER_PAGE = 5;
 
@@ -43,7 +46,9 @@ export const getStaticPaths = async () => {
       endpoint: "news",
       queries: { filters: `category[equals]${content.id}` },
     });
-    const categoryPageCount = Math.ceil(parseInt(newsData.totalCount) / PER_PAGE);
+    const categoryPageCount = Math.ceil(
+      parseInt(newsData.totalCount) / PER_PAGE,
+    );
     for (let page = 1; page <= categoryPageCount; page++) {
       categoryPages.push(`/media/category/${content.id}/page/${page}`);
     }
@@ -52,12 +57,23 @@ export const getStaticPaths = async () => {
 };
 
 export default function TagPageId({ news, category, tag, totalCount }: any) {
+  const router = useRouter();
+  const { pageId } = router.query;
+  const currentPage = Number(pageId);
+
+  let pathname = usePathname();
+  pathname = getPathname(pathname);
+
   return (
     <Layout>
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} currentPage={1} />
+          <Pagination
+            totalCount={totalCount}
+            currentPage={currentPage}
+            pathname={pathname}
+          />
         </Content>
         <Aside>
           <Ad />

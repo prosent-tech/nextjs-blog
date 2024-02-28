@@ -9,6 +9,8 @@ import Ranking from "@/components/Ranking";
 import Tag from "@/components/Tag";
 import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
+import { usePathname } from "next/navigation";
+import { getPathname } from "@/libs/utils";
 
 export const getStaticProps = async (context: any) => {
   const categoryId = context.params.categoryId;
@@ -37,6 +39,9 @@ export const getStaticPaths = async () => {
 };
 
 export default function CategoryId({ news, category, tag, totalCount }: any) {
+  let pathname = usePathname();
+  pathname = getPathname(pathname);
+
   if (news.length === 0) {
     return (
       <Layout>
@@ -60,7 +65,11 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
-          <Pagination totalCount={totalCount} currentPage={1} />
+          <Pagination
+            totalCount={totalCount}
+            currentPage={1}
+            pathname={pathname}
+          />
         </Content>
         <Aside>
           <Ad />

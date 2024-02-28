@@ -7,9 +7,11 @@ const PER_PAGE = 5;
 export default function Pagination({
   totalCount,
   currentPage,
+  pathname,
 }: {
   totalCount: number;
   currentPage: number;
+  pathname: string;
 }) {
   const range = (start: any, end: any) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
@@ -40,7 +42,7 @@ export default function Pagination({
       <ul className={styles.pager}>
         {currentPage !== 1 ? (
           <li className={`${styles.page} ${styles.arrow}`}>
-            <Link href={`/media/page/${currentPage - 1}`}>
+            <Link href={`${pathname}/${currentPage - 1}`}>
               <Image
                 src="https://blog.microcms.io/images/icon_arrow_left.svg"
                 width="20"
@@ -57,7 +59,7 @@ export default function Pagination({
               key={index}
               className={`${styles.page} ${currentPage === number ? `${styles.active}` : ""}`}
             >
-              <Link href={`/media/page/${number}`}>{number}</Link>
+              <Link href={`${pathname}/${number}`}>{number}</Link>
             </li>
           ) : (
             <li key={index} className={styles.omission}>
@@ -66,9 +68,9 @@ export default function Pagination({
           ),
         )}
 
-        {currentPage !== finalPage && totalCount/PER_PAGE > 1 ? (
+        {currentPage !== finalPage && totalCount / PER_PAGE > 1 ? (
           <li className={`${styles.page} ${styles.arrow}`}>
-            <Link href={`/media/page/${currentPage + 1}`}>
+            <Link href={`${pathname}/${currentPage + 1}`}>
               <Image
                 src="https://blog.microcms.io/images/icon_arrow_right.svg"
                 width="20"
