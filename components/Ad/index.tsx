@@ -10,7 +10,7 @@ export default function Ad() {
           <source />
           <Image
             src="https://images.blog.microcms.io/assets/f5d83e38f9374219900ef1b0cc4d85cd/05a106c56c3049a5bccfe3667af54c14/templates.png"
-            alt="news1"
+            alt="ad image"
             width={600}
             height={500}
             className={styles.ogimage}
