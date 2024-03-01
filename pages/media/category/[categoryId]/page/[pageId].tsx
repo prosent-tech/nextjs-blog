@@ -12,6 +12,7 @@ import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { getPathname } from "@/libs/utils";
+import rankingContents from "../../../../../contents.json";
 
 const PER_PAGE = 5;
 
@@ -33,6 +34,7 @@ export const getStaticProps = async (context: any) => {
       news: newsData.contents,
       category: categoryData.contents,
       tag: tagData.contents,
+      rankingContents: rankingContents.contents,
       totalCount: newsData.totalCount,
     },
   };
@@ -56,7 +58,7 @@ export const getStaticPaths = async () => {
   return { paths: categoryPages, fallback: false };
 };
 
-export default function TagPageId({ news, category, tag, totalCount }: any) {
+export default function TagPageId({ news, category, tag, rankingContents, totalCount }: any) {
   const router = useRouter();
   const { pageId } = router.query;
   const currentPage = Number(pageId);
@@ -77,7 +79,7 @@ export default function TagPageId({ news, category, tag, totalCount }: any) {
         </Content>
         <Aside>
           <Ad />
-          <Ranking />
+          <Ranking contents={rankingContents} />
           <Category category={category} />
           <Tag tag={tag} />
         </Aside>

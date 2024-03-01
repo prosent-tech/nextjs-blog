@@ -12,6 +12,7 @@ import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { getPathname } from "@/libs/utils";
+import rankingContents from "../../../../../contents.json";
 
 const PER_PAGE = 5;
 
@@ -75,7 +76,7 @@ export default function TagPageId({ news, category, tag, totalCount }: any) {
         </Content>
         <Aside>
           <Ad />
-          <Ranking />
+          <Ranking contents={rankingContents.contents} />
           <Category category={category} />
           <Tag tag={tag} />
         </Aside>

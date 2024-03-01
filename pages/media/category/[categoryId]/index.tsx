@@ -11,6 +11,7 @@ import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { getPathname } from "@/libs/utils";
+import rankingContents from "../../../../contents.json";
 
 export const getStaticProps = async (context: any) => {
   const categoryId = context.params.categoryId;
@@ -25,6 +26,7 @@ export const getStaticProps = async (context: any) => {
       news: newsData.contents,
       category: categoryData.contents,
       tag: tagData.contents,
+      rankingContents: rankingContents.contents,
       totalCount: newsData.totalCount,
     },
   };
@@ -38,7 +40,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export default function CategoryId({ news, category, tag, totalCount }: any) {
+export default function CategoryId({ news, category, tag, rankingContents, totalCount }: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
 
@@ -51,7 +53,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
           </Content>
           <Aside>
             <Ad />
-            <Ranking />
+            <Ranking contents={rankingContents} />
             <Category category={category} />
             <Tag tag={tag} />
           </Aside>
@@ -73,7 +75,7 @@ export default function CategoryId({ news, category, tag, totalCount }: any) {
         </Content>
         <Aside>
           <Ad />
-          <Ranking />
+          <Ranking contents={rankingContents} />
           <Category category={category} />
           <Tag tag={tag} />
         </Aside>

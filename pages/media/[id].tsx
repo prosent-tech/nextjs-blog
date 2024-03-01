@@ -8,6 +8,7 @@ import Category from "@/components/Category";
 import Tag from "@/components/Tag";
 import Article from "@/components/Article";
 import Content from "@/components/Content";
+import rankingContents from "../../contents.json";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -22,6 +23,7 @@ export const getStaticProps = async (context: any) => {
       news: newsData,
       category: categoryData.contents,
       tag: tagData.contents,
+      rankingContents: rankingContents.contents,
     },
   };
 };
@@ -32,7 +34,7 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export default function MediaId({ news, category, tag }: any) {
+export default function MediaId({ news, category, tag, rankingContents }: any) {
   return (
     <Layout>
       <Divider>
@@ -41,7 +43,7 @@ export default function MediaId({ news, category, tag }: any) {
         </Content>
         <Aside>
           <Ad />
-          <Ranking />
+          <Ranking contents={rankingContents} />
           <Category category={category} />
           <Tag tag={tag} />
         </Aside>

@@ -11,6 +11,7 @@ import Content from "@/components/Content";
 import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { getPathname } from "../../libs/utils";
+import rankingContents from "../../contents.json";
 
 export async function getStaticProps() {
   const newsData = await client.get({
@@ -24,12 +25,13 @@ export async function getStaticProps() {
       news: newsData.contents,
       category: categoryData.contents,
       tag: tagData.contents,
+      rankingContents: rankingContents.contents,
       totalCount: newsData.totalCount,
     },
   };
 }
 
-export default function Home({ news, category, tag, totalCount }: any) {
+export default function Home({ news, category, tag, rankingContents, totalCount }: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
 
@@ -46,7 +48,7 @@ export default function Home({ news, category, tag, totalCount }: any) {
         </Content>
         <Aside>
           <Ad />
-          <Ranking />
+          <Ranking contents={rankingContents} />
           <Category category={category} />
           <Tag tag={tag} />
         </Aside>
