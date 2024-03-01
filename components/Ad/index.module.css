@@ -7,6 +7,7 @@
   border-radius: 5px;
   height: auto;
   width: 300px;
+  display: initial;
 }
 
 @media screen and (max-width: 1160px) {
