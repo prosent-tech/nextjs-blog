@@ -17,9 +17,10 @@ type Image struct {
 }
 
 type Content struct {
-	Id    string `json:"id"`
-	Title string `json:"title"`
-	Image Image  `json:"image"`
+	Id          string `json:"id"`
+	Title       string `json:"title"`
+	Image       Image  `json:"image"`
+	PublishedAt string `json:"publishedAt"`
 }
 
 const (
