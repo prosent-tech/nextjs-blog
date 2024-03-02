@@ -20,3 +20,11 @@ jobs:
       - name: Generate contents.json
         run: go run main.go
         working-directory: ./tools
+
+      - name: Update contents.json
+        run: |
+          git config --local user.email "github-actions
+          git config --local user.name "github-actions"
+          git add .
+          git commit -m "Update contents.json"
+          git push origin HEAD
