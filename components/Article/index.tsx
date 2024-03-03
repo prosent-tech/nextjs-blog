@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
+import RichEditor from "../RichEditor";
 
 export default function Article({ article }: any) {
   article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
@@ -35,18 +36,33 @@ export default function Article({ article }: any) {
           <ul className={styles.shareLists}>
             <li className={styles.shareList}>
               <a href="" target="_blank" rel="noopener noreferrer">
-                <Image src="https://blog.microcms.io/images/icon_x.svg" alt="X" width={24} height={24} />
+                <Image
+                  src="https://blog.microcms.io/images/icon_x.svg"
+                  alt="X"
+                  width={24}
+                  height={24}
+                />
               </a>
             </li>
             <li className={styles.shareList}>
               <a href="" target="_blank" rel="noopener noreferrer">
-                <Image src="https://blog.microcms.io/images/icon_facebook.svg" alt="Facebook" width={24} height={24} />
+                <Image
+                  src="https://blog.microcms.io/images/icon_facebook.svg"
+                  alt="Facebook"
+                  width={24}
+                  height={24}
+                />
               </a>
             </li>
             <li className={styles.shareList}>
               <a href="" target="_blank" rel="noopener noreferrer">
-                <Image src="https://blog.microcms.io/images/icon_hatena.svg" alt="はてなブックマーク" width={24} height={24} />
-              </a>      
+                <Image
+                  src="https://blog.microcms.io/images/icon_hatena.svg"
+                  alt="はてなブックマーク"
+                  width={24}
+                  height={24}
+                />
+              </a>
             </li>
             <li className={styles.shareList}></li>
           </ul>
@@ -76,10 +92,7 @@ export default function Article({ article }: any) {
               {article.author}
             </span>
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: `${article.content}` }}
-            className={styles.post}
-          ></div>
+          <RichEditor content={article.content} />
         </div>
       </div>
     </article>

@@ -31,7 +31,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ news, category, tag, rankingContents, totalCount }: any) {
+export default function Home({
+  news,
+  category,
+  tag,
+  rankingContents,
+  totalCount,
+}: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
 

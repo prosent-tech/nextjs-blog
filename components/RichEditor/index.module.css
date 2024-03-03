@@ -1,0 +1,49 @@
+/* ---------------------------------------- */
+/* Custom CSS */
+/* ---------------------------------------- */
+.post h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  background-color: #eee;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.post h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 40px 0 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.post h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px 0 16px;
+}
+
+.post p {
+  font-size: 16px;
+  line-height: 2;
+  /* letter-spacing: 0.2px; */
+}
+
+.post ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.post ol > li {
+  line-height: 2;
+}
+
+.post ul > li {
+  line-height: 2;
+}
+
+.post img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  max-width: 100%;
+}
