@@ -38,7 +38,13 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export default function TagId({ news, category, tag, rankingContents, totalCount }: any) {
+export default function TagId({
+  news,
+  category,
+  tag,
+  rankingContents,
+  totalCount,
+}: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
 

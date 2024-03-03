@@ -58,7 +58,13 @@ export const getStaticPaths = async () => {
   return { paths: categoryPages, fallback: false };
 };
 
-export default function TagPageId({ news, category, tag, rankingContents, totalCount }: any) {
+export default function TagPageId({
+  news,
+  category,
+  tag,
+  rankingContents,
+  totalCount,
+}: any) {
   const router = useRouter();
   const { pageId } = router.query;
   const currentPage = Number(pageId);

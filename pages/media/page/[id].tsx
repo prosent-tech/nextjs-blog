@@ -45,7 +45,13 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export default function MediaId({ news, category, tag, rankingContents, totalCount }: any) {
+export default function MediaId({
+  news,
+  category,
+  tag,
+  rankingContents,
+  totalCount,
+}: any) {
   const router = useRouter();
   const { id } = router.query;
   const currentPage = Number(id);
