@@ -106,6 +106,91 @@
   }
 }
 
+@media screen and (min-width: 820px) {
+  .share {
+    padding-top: 16px;
+    width: 24px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 820px) {
+  .share {
+    padding-top: 16px;
+    width: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .share {
+    margin: 40px 0 0;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .share img {
+    max-height: 24px;
+    max-width: 24px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 820px) {
+  .share img {
+    max-height: 24px;
+    max-width: 24px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .share img {
+    max-height: 20px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .shareLists {
+    display: block;
+    position: sticky;
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 820px) {
+  .shareLists {
+    display: block;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .shareLists {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .shareList {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 820px) {
+  .shareList {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .shareList {
+    margin: 0 20px;
+    text-align: center;
+  }
+}
+
+
 @media screen and (min-width: 1160px) {
   .container {
     -webkit-font-smoothing: antialiased;
@@ -318,6 +403,10 @@
   }
 }
 
+/* ---------------------------------------- */
+/* Custom CSS */
+/* ---------------------------------------- */
+
 .post h1 {
   font-size: 30px;
   font-weight: bold;
@@ -334,12 +423,33 @@
   border-bottom: 1px solid #ddd;
 }
 
+.post h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px 0 16px;
+}
+
 .post p {
-  line-height: 1.8;
-  letter-spacing: 0.2px;
+  font-size: 16px;
+  line-height: 2;
+  /* letter-spacing: 0.2px; */
 }
 
 .post ol {
   list-style-type: decimal;
   list-style-position: inside;
+}
+
+.post ol>li {
+  line-height: 2;
+}
+
+.post ul>li {
+  line-height: 2;
+}
+
+.post img {
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  margin: 40px 0;
+  max-width: 100%;
 }

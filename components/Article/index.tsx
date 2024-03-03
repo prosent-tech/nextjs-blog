@@ -31,7 +31,26 @@ export default function Article({ article }: any) {
       </ul>
 
       <div className={styles.main}>
-        <div className={styles.share}></div>
+        <div className={styles.share}>
+          <ul className={styles.shareLists}>
+            <li className={styles.shareList}>
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image src="https://blog.microcms.io/images/icon_x.svg" alt="X" width={24} height={24} />
+              </a>
+            </li>
+            <li className={styles.shareList}>
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image src="https://blog.microcms.io/images/icon_facebook.svg" alt="Facebook" width={24} height={24} />
+              </a>
+            </li>
+            <li className={styles.shareList}>
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image src="https://blog.microcms.io/images/icon_hatena.svg" alt="はてなブックマーク" width={24} height={24} />
+              </a>      
+            </li>
+            <li className={styles.shareList}></li>
+          </ul>
+        </div>
         <div className={styles.container}>
           <h1 className={styles.title}>{article.title}</h1>
           <div className={styles.upper}>
@@ -43,7 +62,7 @@ export default function Article({ article }: any) {
                 src="https://blog.microcms.io/images/icon_clock.svg"
                 width={20}
                 height={20}
-                alt=""
+                alt="Clock"
               />
               <time dateTime={article.publishedAt}>{article.publishedAt}</time>
             </span>
@@ -52,7 +71,7 @@ export default function Article({ article }: any) {
                 src="https://blog.microcms.io/images/icon_author.svg"
                 width={20}
                 height={20}
-                alt=""
+                alt="Author"
               />
               {article.author}
             </span>
