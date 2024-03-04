@@ -47,7 +47,7 @@ export default function Article({ article }: any) {
             <li className={styles.shareList}>
               <a href="" target="_blank" rel="noopener noreferrer">
                 <Image
-                  src="https://blog.microcms.io/images/icon_facebook.svg"
+                  src="https://lab.timee.co.jp/assets/timee/img/common/icon_facebook.svg"
                   alt="Facebook"
                   width={24}
                   height={24}

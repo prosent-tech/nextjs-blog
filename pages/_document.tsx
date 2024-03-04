@@ -1,13 +1,29 @@
-import { Html, Head, Main, NextScript } from "next/document";
+import NextDocument, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
-export default function Document() {
-  return (
-    <Html lang="ja">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+export default class Document extends NextDocument {
+  render() {
+    return (
+      <Html lang="ja">
+        <Head>
+          <Script
+            src="https://platform.twitter.com/widgets.js"
+            strategy="afterInteractive"
+          />
+          <Script
+            src="https://www.instagram.com/embed.js"
+            strategy="afterInteractive"
+          />
+          <Script
+            src="https://cdn.iframe.ly/embed.js"
+            strategy="afterInteractive"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
