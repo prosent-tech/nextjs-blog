@@ -1,3 +1,4 @@
+# FIX: https://github.com/microcmsio/nextjs-media-skeleton-template
 name: Generate contents.json
 
 on:
