@@ -2,9 +2,14 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
 import RichEditor from "../RichEditor";
+import { renderToc } from "../../libs/render-toc";
+import TableOfContents from "../TableOfContents/tableOfContents";
 
 export default function Article({ article }: any) {
   article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
+
+  const toc = renderToc(article.content);
+  
   return (
     <article className={styles.content}>
       <div className={styles.ogimageWrap}>
@@ -92,6 +97,7 @@ export default function Article({ article }: any) {
               {article.author}
             </span>
           </div>
+          <TableOfContents toc={toc} />
           <RichEditor content={article.content} />
         </div>
       </div>
