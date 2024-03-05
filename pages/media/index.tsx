@@ -41,10 +41,18 @@ export default function Home({
 }: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
+
   const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
+
   return (
     <Layout>
-      <Meta url={url} appUrl={url} ogImageUrl="" ogType="website" />
+      <Meta
+        url={url}
+        appUrl={url}
+        ogImageUrl={news.ogImageUrl}
+        ogType="article"
+        robots={false}
+      />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />

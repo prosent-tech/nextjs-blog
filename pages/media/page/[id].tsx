@@ -13,6 +13,7 @@ import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { getPathname } from "@/libs/utils";
 import rankingContents from "../../../contents.json";
+import { Meta } from "@/components/Meta";
 
 const PER_PAGE = 5;
 
@@ -59,8 +60,16 @@ export default function MediaId({
   let pathname = usePathname();
   pathname = getPathname(pathname);
 
+  const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
+
   return (
     <Layout>
+      <Meta
+        url={url}
+        appUrl={url}
+        ogImageUrl={news.ogImageUrl}
+        ogType="article"
+      />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />

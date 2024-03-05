@@ -38,14 +38,16 @@ export const getStaticPaths = async () => {
 
 export default function MediaId({ news, category, tag, rankingContents }: any) {
   const pathname = usePathname();
+
   const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
+
   return (
     <Layout>
       <Meta
         url={url}
         appUrl={url}
         ogImageUrl={news.ogImageUrl}
-        ogType="website"
+        ogType="article"
       />
       <Divider>
         <Content>

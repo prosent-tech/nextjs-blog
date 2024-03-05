@@ -12,6 +12,7 @@ import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { getPathname } from "@/libs/utils";
 import rankingContents from "../../../../contents.json";
+import { Meta } from "@/components/Meta";
 
 export const getStaticProps = async (context: any) => {
   const tagId = context.params.tagId;
@@ -48,9 +49,18 @@ export default function TagId({
   let pathname = usePathname();
   pathname = getPathname(pathname);
 
+  const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
+
   if (news.length === 0) {
     return (
       <Layout>
+        <Meta
+          url={url}
+          appUrl={url}
+          ogImageUrl={news.ogImageUrl}
+          ogType="article"
+          robots={false}
+        />
         <Divider>
           <Content>
             <h1>記事がありません</h1>
@@ -68,6 +78,12 @@ export default function TagId({
 
   return (
     <Layout>
+      <Meta
+        url={url}
+        appUrl={url}
+        ogImageUrl={news.ogImageUrl}
+        ogType="article"
+      />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />

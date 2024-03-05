@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { getPathname } from "@/libs/utils";
 import rankingContents from "../../../../../contents.json";
+import { Meta } from "@/components/Meta";
 
 const PER_PAGE = 5;
 
@@ -72,8 +73,16 @@ export default function TagPageId({
   let pathname = usePathname();
   pathname = getPathname(pathname);
 
+  const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
+
   return (
     <Layout>
+      <Meta
+        url={url}
+        appUrl={url}
+        ogImageUrl={news.ogImageUrl}
+        ogType="article"
+      />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
