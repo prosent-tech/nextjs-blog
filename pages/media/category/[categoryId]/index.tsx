@@ -83,7 +83,7 @@ export default function CategoryId({
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.image.url}
+        ogImageUrl=""
         ogType="article"
       />
       <Divider>

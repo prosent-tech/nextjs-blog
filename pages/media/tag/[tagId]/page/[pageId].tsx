@@ -71,7 +71,7 @@ export default function TagPageId({ news, category, tag, totalCount }: any) {
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.image.url}
+        ogImageUrl=""
         ogType="article"
       />
       <Divider>
