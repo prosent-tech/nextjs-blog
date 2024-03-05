@@ -12,6 +12,7 @@ import Pagination from "@/components/Pagination";
 import { usePathname } from "next/navigation";
 import { getPathname } from "../../libs/utils";
 import rankingContents from "../../contents.json";
+import { Meta } from "@/components/Meta";
 
 export async function getStaticProps() {
   const newsData = await client.get({
@@ -40,9 +41,10 @@ export default function Home({
 }: any) {
   let pathname = usePathname();
   pathname = getPathname(pathname);
-
+  const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
   return (
     <Layout>
+      <Meta url={url} appUrl={url} ogImageUrl="" ogType="website" />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />

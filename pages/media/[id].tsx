@@ -9,6 +9,8 @@ import Tag from "@/components/Tag";
 import Article from "@/components/Article";
 import Content from "@/components/Content";
 import rankingContents from "../../contents.json";
+import { Meta } from "@/components/Meta";
+import { usePathname } from "next/navigation";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -35,8 +37,16 @@ export const getStaticPaths = async () => {
 };
 
 export default function MediaId({ news, category, tag, rankingContents }: any) {
+  const pathname = usePathname();
+  const url = process.env.NEXT_PUBLIC_APP_URL + pathname;
   return (
     <Layout>
+      <Meta
+        url={url}
+        appUrl={url}
+        ogImageUrl={news.ogImageUrl}
+        ogType="website"
+      />
       <Divider>
         <Content>
           <Article article={news} />

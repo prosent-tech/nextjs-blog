@@ -4,7 +4,7 @@ import Script from "next/script";
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html lang="ja">
+      <Html lang="ja" prefix="og: http://ogp.me/ns#">
         <Head>
           <Script
             src="https://platform.twitter.com/widgets.js"

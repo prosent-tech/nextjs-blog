@@ -3,30 +3,25 @@ import Head from "next/head";
 type OGType = "website" | "product" | "profile" | "article";
 
 export type MetaData = {
-  title: string | undefined;
-  description: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
   url: string | undefined;
   appUrl: string | undefined;
   robots?: boolean;
   keywords?: string;
-  ogImageUrl?: string;
-  ogType?: OGType;
-  // jsonLdList?: WithContext<Thing>[]
-  translationNamespace?: string;
-  disableTranslation?: boolean;
+  ogImageUrl: string;
+  ogType: OGType;
 };
 
 export const Meta: React.FC<MetaData> = ({
-  title = "",
-  description = "",
-  keywords,
-  url = "https://mimipo.jp",
+  title = "美肌メディア by Mimipo",
+  description = "美肌になりたいあなたのためのメディア",
+  keywords = "美肌,美容,メディア,ニュース,ブログ",
+  url = "",
   appUrl = "",
   robots = true,
   ogImageUrl = "",
   ogType = "article",
-  translationNamespace = "common",
-  disableTranslation = false,
 }) => {
   return (
     <Head>
@@ -44,14 +39,16 @@ export const Meta: React.FC<MetaData> = ({
         name="robots"
         content={robots ? "index, follow" : "noindex, nofollow"}
       />
-      <meta property="og:site_name" content="" />
+      <meta property="og:site_name" content="美肌メディア by Mimipo" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={ogImageUrl} />
+      {/* Facebook */}
       <meta property="fb:app_id" content="" />
-      <meta name="twitter:card" content="" />
+      {/* Twitter */}
+      <meta name="twitter:card" content="sumarry_large_image" />
       <meta name="twitter:site" content="" />
       <meta name="twitter:creator" content="" />
       <meta name="twitter:app:name:iphone" content="" />
