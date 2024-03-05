@@ -4,12 +4,17 @@ import Image from "next/image";
 import RichEditor from "../RichEditor";
 import { renderToc } from "../../libs/render-toc";
 import TableOfContents from "../TableOfContents/tableOfContents";
+import { useEffect, useState } from "react";
 
 export default function Article({ article }: any) {
   article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
+    
+  const [toc, setToc] = useState([] as any[]);
+  useEffect(() => {
+    const toc = renderToc(article.content);
+    setToc(toc);
+  }, [article.content]);
 
-  const toc = renderToc(article.content);
-  
   return (
     <article className={styles.content}>
       <div className={styles.ogimageWrap}>

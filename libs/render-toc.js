@@ -1,12 +1,16 @@
-import * as cheerio from "cheerio";
-
 export const renderToc = (body) => {
-  const $ = cheerio.load(body);
-  const headings = $("h1, h2, h3").toArray();
-  const toc = headings.map((data) => ({
-    id: data.attribs.id,
-    name: data.name,
-    text: data.children[0].children[0].data,
-  }));
+  var tempElement = document.createElement('div');
+  tempElement.innerHTML = body;
+  var headings = tempElement.querySelectorAll('h1, h2, h3')
+  var toc = [];
+  for (var i = 0; i < headings.length; i++) {
+    var heading = headings[i];
+    var headingInfo = {
+      id: heading.id,
+      text: heading.textContent,
+      name: heading.tagName.toLowerCase()
+    };
+    toc.push(headingInfo);
+  }
   return toc;
-};
+}
