@@ -4,7 +4,7 @@ name: Generate contents.json
 on:
   push:
     branches:
-      - main
+      - release
 
 jobs:
   build:

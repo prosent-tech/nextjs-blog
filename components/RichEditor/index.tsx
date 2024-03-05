@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import styles from "./index.module.css";
 import { useEffect } from "react";
 
@@ -9,9 +8,6 @@ declare global {
 }
 
 export default function RichEditor({ content }: any) {
-  const { asPath } = useRouter();
-  console.log(asPath);
-
   useEffect(() => {
     try {
       window.twttr.widgets.load();
