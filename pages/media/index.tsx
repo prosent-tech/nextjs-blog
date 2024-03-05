@@ -49,7 +49,7 @@ export default function Home({
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.ogImageUrl}
+        ogImageUrl={news.image.url}
         ogType="article"
         robots={false}
       />

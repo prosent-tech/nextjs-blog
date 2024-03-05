@@ -57,7 +57,7 @@ export default function TagId({
         <Meta
           url={url}
           appUrl={url}
-          ogImageUrl={news.ogImageUrl}
+          ogImageUrl={news.image.url}
           ogType="article"
           robots={false}
         />
@@ -81,7 +81,7 @@ export default function TagId({
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.ogImageUrl}
+        ogImageUrl={news.image.url}
         ogType="article"
       />
       <Divider>

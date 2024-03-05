@@ -46,7 +46,7 @@ export default function MediaId({ news, category, tag, rankingContents }: any) {
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.ogImageUrl}
+        ogImageUrl={news.image.url}
         ogType="article"
       />
       <Divider>

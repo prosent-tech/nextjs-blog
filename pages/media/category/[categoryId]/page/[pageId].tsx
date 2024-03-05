@@ -80,7 +80,7 @@ export default function TagPageId({
       <Meta
         url={url}
         appUrl={url}
-        ogImageUrl={news.ogImageUrl}
+        ogImageUrl={news.image.url}
         ogType="article"
       />
       <Divider>
