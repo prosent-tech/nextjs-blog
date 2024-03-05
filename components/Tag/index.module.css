@@ -18,8 +18,7 @@
 
 @media screen and (min-width: 1160px) {
   .tagTitle {
-    color: #fff;
-    background-color: #067289;
+    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -30,8 +29,7 @@
 
 @media screen and (min-width: 820px) and (max-width: 1160px) {
   .tagTitle {
-    color: #fff;
-    background-color: #067289;
+    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -42,8 +40,7 @@
 
 @media screen and (max-width: 820px) {
   .tagTitle {
-    color: #fff;
-    background-color: #067289;
+    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;

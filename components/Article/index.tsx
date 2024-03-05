@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Article({ article }: any) {
   article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
-    
+
   const [toc, setToc] = useState([] as any[]);
   useEffect(() => {
     const toc = renderToc(article.content);

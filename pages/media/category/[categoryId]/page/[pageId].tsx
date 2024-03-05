@@ -77,12 +77,7 @@ export default function TagPageId({
 
   return (
     <Layout>
-      <Meta
-        url={url}
-        appUrl={url}
-        ogImageUrl=""
-        ogType="article"
-      />
+      <Meta url={url} appUrl={url} ogImageUrl="" ogType="article" />
       <Divider>
         <Content>
           <Articles articles={news} totalCount={totalCount} />
