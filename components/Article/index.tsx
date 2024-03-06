@@ -49,8 +49,8 @@ export default function Article({ article }: any) {
                 <Image
                   src="https://blog.microcms.io/images/icon_x.svg"
                   alt="X"
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
                 />
               </a>
             </li>
@@ -59,18 +59,30 @@ export default function Article({ article }: any) {
                 <Image
                   src="https://lab.timee.co.jp/assets/timee/img/common/icon_facebook.svg"
                   alt="Facebook"
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
                 />
               </a>
             </li>
+
+            <li className={styles.shareList}>
+              <a href="" target="_blank" rel="noopener noreferrer">
+                <Image
+                  src="https://lab.timee.co.jp/assets/timee/img/common/icon_line.svg"
+                  alt="LINE"
+                  width={32}
+                  height={32}
+                />
+              </a>
+            </li>
+
             <li className={styles.shareList}>
               <a href="" target="_blank" rel="noopener noreferrer">
                 <Image
                   src="https://blog.microcms.io/images/icon_hatena.svg"
                   alt="はてなブックマーク"
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
                 />
               </a>
             </li>
