@@ -15,6 +15,8 @@ export default function Article({ article }: any) {
     setToc(toc);
   }, [article.content]);
 
+  const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}`;
+
   return (
     <article className={styles.content}>
       <div className={styles.ogimageWrap}>
@@ -45,7 +47,11 @@ export default function Article({ article }: any) {
         <div className={styles.share}>
           <ul className={styles.shareLists}>
             <li className={styles.shareList}>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`http://twitter.com/share?url=${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}&text=${article.title}&via=Mimipo_Clinic&hashtags=Mimipoオンラインクリニック`}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
                 <Image
                   src="https://blog.microcms.io/images/icon_x.svg"
                   alt="X"
@@ -55,7 +61,11 @@ export default function Article({ article }: any) {
               </a>
             </li>
             <li className={styles.shareList}>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`http://www.facebook.com/share.php?u=${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}`}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
                 <Image
                   src="https://lab.timee.co.jp/assets/timee/img/common/icon_facebook.svg"
                   alt="Facebook"
@@ -64,9 +74,12 @@ export default function Article({ article }: any) {
                 />
               </a>
             </li>
-
             <li className={styles.shareList}>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`https://social-plugins.line.me/lineit/share?url=${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}`}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
                 <Image
                   src="https://lab.timee.co.jp/assets/timee/img/common/icon_line.svg"
                   alt="LINE"
@@ -75,9 +88,12 @@ export default function Article({ article }: any) {
                 />
               </a>
             </li>
-
             <li className={styles.shareList}>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a
+                href={`http://b.hatena.ne.jp/entry/s/${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}`}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
                 <Image
                   src="https://blog.microcms.io/images/icon_hatena.svg"
                   alt="はてなブックマーク"
