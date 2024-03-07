@@ -12,7 +12,7 @@ export default function Article({ article }: any) {
   const [toc, setToc] = useState([] as any[]);
   useEffect(() => {
     var body = "";
-    article.topic.map((topic: any) => {
+    article.topic?.map((topic: any) => {
       if (topic.fieldId === "richEditor") {
         body += topic.richEditor;
         const toc = renderToc(body);

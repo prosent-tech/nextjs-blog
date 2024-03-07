@@ -25,14 +25,14 @@
 }
 
 .title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   margin: 0 0 10px;
 }
 
 .list {
   border-bottom: 1px solid #e7e7f3;
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px 0;
 }
 
