@@ -15,8 +15,6 @@ export default function Article({ article }: any) {
     setToc(toc);
   }, [article.content]);
 
-  const lineShareUrl = `https://social-plugins.line.me/lineit/share?url=${process.env.NEXT_PUBLIC_APP_URL}/media/${article.id}`;
-
   return (
     <article className={styles.content}>
       <div className={styles.ogimageWrap}>

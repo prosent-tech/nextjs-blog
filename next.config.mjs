@@ -3,6 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   // trailingSlash: true,
   output: 'export',
+  compiler: {
+    styledComponents: true,
+  },
   images: {
     unoptimized: true,
     domains: [
