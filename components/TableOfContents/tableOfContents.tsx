@@ -10,7 +10,9 @@ export default function TableOfContents({ toc }: any) {
             key={data.id}
             className={`${styles.list} ${data.name == "h2" ? styles.listH2 : ""} ${data.name == "h3" ? styles.listH3 : ""}`}
           >
-            <a href={`#${data.id}`} title={data.text}>{data.text}</a>
+            <a href={`#${data.id}`} title={data.text}>
+              {data.text}
+            </a>
           </li>
         ))}
       </ul>

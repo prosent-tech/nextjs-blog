@@ -1,19 +1,25 @@
 import Link from "next/link";
 import styles from "./index.module.css";
 import Image from "next/image";
-import RichEditor from "../RichEditor";
 import { renderToc } from "../../libs/render-toc";
 import TableOfContents from "../TableOfContents/tableOfContents";
 import { useEffect, useState } from "react";
+import Topic from "../Topic";
 
 export default function Article({ article }: any) {
   article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
 
   const [toc, setToc] = useState([] as any[]);
   useEffect(() => {
-    const toc = renderToc(article.content);
-    setToc(toc);
-  }, [article.content]);
+    var body = "";
+    article.topic.map((topic: any) => {
+      if (topic.fieldId === "richEditor") {
+        body += topic.richEditor;
+        const toc = renderToc(body);
+        setToc(toc);
+      }
+    });
+  }, [article.topic]);
 
   return (
     <article className={styles.content}>
@@ -129,7 +135,9 @@ export default function Article({ article }: any) {
             </span>
           </div>
           <TableOfContents toc={toc} />
-          <RichEditor content={article.content} />
+          <Topic topic={article.topic} />
+          {/* MEMO: 繰り返しにてリッチエディタを使用するため廃止 */}
+          {/* <RichEditor content={article.content} /> */}
         </div>
       </div>
     </article>

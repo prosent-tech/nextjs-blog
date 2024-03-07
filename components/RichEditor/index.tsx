@@ -81,6 +81,4 @@ const RichEditorStyled = styled.div`
       }
     }
   }
-
-  
 `;
