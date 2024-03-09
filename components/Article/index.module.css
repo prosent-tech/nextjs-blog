@@ -212,6 +212,7 @@
     background-color: #fff;
     flex: 1;
     position: relative;
+    border-radius: 0px;
   }
 }
 
