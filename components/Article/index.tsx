@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Topic from "../Topic";
 
 export default function Article({ article }: any) {
-  article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
+  article.publishedAt = new Date(article.publishedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' });
 
   const [toc, setToc] = useState([] as any[]);
   useEffect(() => {

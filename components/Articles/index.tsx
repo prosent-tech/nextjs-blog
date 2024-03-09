@@ -32,7 +32,7 @@ export type Article = {
 
 export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
   articles.map((article) => {
-    article.publishedAt = new Date(article.publishedAt).toLocaleDateString();
+    article.publishedAt = new Date(article.publishedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' });
   }, []);
 
   return (
