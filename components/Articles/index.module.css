@@ -2,12 +2,19 @@
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .breadcrumbList a {
   /* color: #331cbf; */
   color: #000;
+}
+
+.unorderedList {
+  padding: 0 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 /* list */
