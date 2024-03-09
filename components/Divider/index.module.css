@@ -24,6 +24,7 @@
 
 @media screen and (max-width: 600px) {
   .divider {
+    margin: 1px auto;
     padding: 0px;
   }
 }

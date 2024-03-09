@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`${styles.headerContainer} ${styles.wrapper}`}>
-        <h1 className={styles.headerLogo}>
+        <span className={styles.headerLogo}>
           <Image
             src="/logo.svg"
             alt="Mimipo Logo"
@@ -13,7 +13,7 @@ export default function Header() {
             height={28}
             priority
           />
-        </h1>
+        </span>
       </div>
     </header>
   );
