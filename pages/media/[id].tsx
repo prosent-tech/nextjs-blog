@@ -11,6 +11,7 @@ import rankingContents from "../../contents.json";
 import { Meta } from "@/components/Meta";
 import { usePathname } from "next/navigation";
 import Related from "@/components/Related";
+import Profile from "@/components/Profile";
 
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
@@ -67,6 +68,7 @@ export default function MediaId({
           <Article article={news} />
         </Content>
         <Aside>
+          <Profile />
           <Related contents={relatedContents} />
           <Ranking contents={rankingContents} />
           <Category category={category} />
