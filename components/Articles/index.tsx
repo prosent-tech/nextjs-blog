@@ -42,7 +42,7 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
     <>
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
-          <a href="">記事一覧</a>
+          <Link href="/media">記事一覧</Link>
         </li>
       </ul>
       <ul className={styles.unorderedList}>
