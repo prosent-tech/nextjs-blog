@@ -77,7 +77,7 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
                   <div className={styles.meta}>
                     <span className={styles.timestamp}>
                       <Image
-                        src="https://blog.microcms.io/images/icon_clock.svg"
+                        src="/clock.svg"
                         width={20}
                         height={20}
                         alt=""
@@ -89,7 +89,7 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
                     {article.author != undefined && (
                       <span className={styles.author}>
                         <Image
-                          src="https://blog.microcms.io/images/icon_author.svg"
+                          src="/author.svg"
                           width={20}
                           height={20}
                           alt=""

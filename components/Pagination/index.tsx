@@ -44,7 +44,7 @@ export default function Pagination({
           <li className={`${styles.page} ${styles.arrow}`}>
             <Link href={`${pathname}/${currentPage - 1}`}>
               <Image
-                src="https://blog.microcms.io/images/icon_arrow_left.svg"
+                src="/arrow_left.svg"
                 width="20"
                 height="24"
                 alt=""
@@ -72,7 +72,7 @@ export default function Pagination({
           <li className={`${styles.page} ${styles.arrow}`}>
             <Link href={`${pathname}/${currentPage + 1}`}>
               <Image
-                src="https://blog.microcms.io/images/icon_arrow_right.svg"
+                src="/arrow_right.svg"
                 width="20"
                 height="24"
                 alt=""

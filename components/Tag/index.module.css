@@ -62,7 +62,7 @@
 
 @media screen and (min-width: 820px) {
   .link::before {
-    background: url(https://blog.microcms.io/images/icon_tag.svg) 50% no-repeat;
+    background: url(/tag.svg) 50% no-repeat;
     background-size: contain;
     content: "";
     display: inline-block;
@@ -77,7 +77,7 @@
 
 @media screen and (max-width: 820px) {
   .link::before {
-    background: url(https://blog.microcms.io/images/icon_tag.svg) 50% no-repeat;
+    background: url(/tag.svg) 50% no-repeat;
     background-size: contain;
     content: "";
     display: inline-block;

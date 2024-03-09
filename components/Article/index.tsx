@@ -60,7 +60,7 @@ export default function Article({ article }: any) {
                 rel="nofollow noopener noreferrer"
               >
                 <Image
-                  src="https://blog.microcms.io/images/icon_x.svg"
+                  src="/x.svg"
                   alt="X"
                   width={32}
                   height={32}
@@ -74,7 +74,7 @@ export default function Article({ article }: any) {
                 rel="nofollow noopener noreferrer"
               >
                 <Image
-                  src="https://lab.timee.co.jp/assets/timee/img/common/icon_facebook.svg"
+                  src="/facebook.svg"
                   alt="Facebook"
                   width={32}
                   height={32}
@@ -88,7 +88,7 @@ export default function Article({ article }: any) {
                 rel="nofollow noopener noreferrer"
               >
                 <Image
-                  src="https://lab.timee.co.jp/assets/timee/img/common/icon_line.svg"
+                  src="/line.svg"
                   alt="LINE"
                   width={32}
                   height={32}
@@ -102,7 +102,7 @@ export default function Article({ article }: any) {
                 rel="nofollow noopener noreferrer"
               >
                 <Image
-                  src="https://blog.microcms.io/images/icon_hatena.svg"
+                  src="/hatena.svg"
                   alt="はてなブックマーク"
                   width={32}
                   height={32}
@@ -120,7 +120,7 @@ export default function Article({ article }: any) {
           <div className={styles.meta}>
             <span className={styles.timestamp}>
               <Image
-                src="https://blog.microcms.io/images/icon_clock.svg"
+                src="/clock.svg"
                 width={20}
                 height={20}
                 alt="Clock"
@@ -130,7 +130,7 @@ export default function Article({ article }: any) {
             {article.author != undefined && (
               <span className={styles.author}>
                 <Image
-                  src="https://blog.microcms.io/images/icon_author.svg"
+                  src="/author.svg"
                   width={20}
                   height={20}
                   alt="Author"

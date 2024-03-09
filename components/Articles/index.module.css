@@ -166,7 +166,7 @@
     position: relative;
   }
   .tag li span::before {
-    background: url("https://blog.microcms.io/images/icon_tag_navy.svg") 50%
+    background: url("/tag_navy.svg") 50%
       no-repeat;
     background-size: contain;
     content: "";
@@ -197,7 +197,7 @@
     position: relative;
   }
   .tag li span::before {
-    background: url("https://blog.microcms.io/images/icon_tag_navy.svg") 50%
+    background: url("/tag_navy.svg") 50%
       no-repeat;
     background-size: contain;
     content: "";

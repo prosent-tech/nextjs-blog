@@ -42,7 +42,7 @@ export default function Topic({ topic }: any) {
               <div>
                 <span className={styles.timestamp}>
                   <Image
-                    src="https://blog.microcms.io/images/icon_clock.svg"
+                    src="/clock.svg"
                     width={20}
                     height={20}
                     alt=""
