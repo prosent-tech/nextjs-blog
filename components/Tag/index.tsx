@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 export default function Tag({ tag }: { tag: any }) {
   return (
     <div className={styles.tag}>
-      <h1 className={styles.tagTitle}>タグ一覧</h1>
+      <h4 className={styles.tagTitle}>タグ一覧</h4>
       <ul className={styles.unorderedList}>
         {tag.map((tag: any) => (
           <li className={styles.list} key={tag.id}>

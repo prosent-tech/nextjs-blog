@@ -6,7 +6,8 @@
 }
 
 .breadcrumbList a {
-  color: #331cbf;
+  /* color: #331cbf; */
+  color: #000;
 }
 
 /* list */

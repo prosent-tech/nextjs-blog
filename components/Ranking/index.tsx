@@ -5,10 +5,10 @@ import styles from "./index.module.css";
 export default function Ranking({ contents }: { contents: any }) {
   return (
     <div className={styles.ranking}>
-      <h1 className={styles.rankingTitle}>人気の記事</h1>
-      <ul className={styles.list}>
+      <h4 className={styles.rankingTitle}>人気の記事</h4>
+      <ul className={styles.unorderedList}>
         {contents.map((content: any) => (
-          <li key={content.id}>
+          <li className={styles.list} key={content.id}>
             <Link href={`/media/${content.id}`} className={styles.link}>
               <picture>
                 <source />

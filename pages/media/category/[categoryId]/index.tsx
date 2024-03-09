@@ -65,7 +65,7 @@ export default function CategoryId({
         />
         <Divider>
           <Content>
-            <h1>記事がありません</h1>
+            <h4>記事がありません</h4>
           </Content>
           <Aside>
             <Ad />

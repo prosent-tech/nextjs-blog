@@ -6,17 +6,17 @@ export default function Related({ contents }: { contents: any }) {
   if (contents.length === 0) {
     return (
       <div>
-        <h1>記事がありません</h1>
+        <h4>記事がありません</h4>
       </div>
     );
   }
 
   return (
     <div className={styles.related}>
-      <h1 className={styles.relatedTitle}>関連記事</h1>
-      <ul className={styles.list}>
+      <h4 className={styles.relatedTitle}>関連記事</h4>
+      <ul className={styles.unorderedList}>
         {contents.map((content: any) => (
-          <li key={content.id}>
+          <li key={content.id} className={styles.list}>
             <Link href={`/media/${content.id}`} className={styles.link}>
               <picture>
                 <source />

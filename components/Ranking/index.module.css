@@ -1,54 +1,21 @@
-@media screen and (min-width: 1160px) {
-  .ranking {
-    padding: 20px 0;
-  }
-}
-
-@media screen and (min-width: 820px) and (max-width: 1160px) {
-  .ranking {
-    padding: 20px 0 0;
-  }
-}
-
-@media screen and (max-width: 820px) {
-  .ranking {
-    padding: 20px 0 0;
-  }
+.ranking {
+  overflow: hidden;
+  background: #fff;
+  margin: 0 0 2.5em;
+  border-radius: 5px;
+  border: 1px solid #e4edf4;
 }
 
 .rankingTitle {
-  background-color: var(--title-background-color);
+  font-size: 20px;
+  font-weight: 700;
   color: #fff;
+  background-color: var(--title-background-color);
+  padding: 6px 10px;
 }
 
-@media screen and (min-width: 1160px) {
-  .rankingTitle {
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 6px 10px;
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (min-width: 520px) and (max-width: 1160px) {
-  .rankingTitle {
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 6px 10px;
-    margin-bottom: 10px;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  .rankingTitle {
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 6px 10px;
-    margin-bottom: 10px;
-  }
+.unorderedList {
+  padding: 8px 10px;
 }
 
 @media screen and (min-width: 1160px) {
