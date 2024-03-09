@@ -6,6 +6,12 @@
   border: 1px solid #e4edf4;
 }
 
+@media screen and (max-width: 600px) {
+  .tag {
+    margin: 0 10px 2.5em;
+  }
+}
+
 .tagTitle {
   font-size: 20px;
   font-weight: 700;

@@ -24,10 +24,10 @@
 
 @media screen and (max-width: 600px) {
   .ogimageWrap {
-    margin: 0 -15px;
     overflow: hidden;
     position: relative;
-    width: calc(100% + 30px);
+    /* margin: 0 -15px; */
+    /* width: calc(100% + 30px); */
   }
 }
 
@@ -46,11 +46,10 @@
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 20px 10px;
 }
 
 .breadcrumbList a {
-  /* color: #331cbf; */
   color: #000;
 }
 
@@ -63,7 +62,6 @@
   .main {
     display: flex;
     justify-content: space-between;
-    /* margin-top: 40px; */
   }
 }
 
@@ -71,7 +69,6 @@
   .main {
     display: flex;
     justify-content: space-between;
-    /* margin-top: 40px; */
   }
 }
 
@@ -79,7 +76,6 @@
   .main {
     display: flex;
     justify-content: space-between;
-    /* margin-top: 40px; */
   }
 }
 
@@ -87,7 +83,6 @@
   .main {
     display: flex;
     flex-direction: column-reverse;
-    /* margin-top: 30px; */
   }
 }
 
