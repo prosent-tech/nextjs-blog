@@ -39,7 +39,7 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
   }, []);
 
   return (
-    <div className={styles.articles}>
+    <>
       <ul className={styles.breadcrumb}>
         <li className={styles.breadcrumbList}>
           <a href="">記事一覧</a>
@@ -102,6 +102,6 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };

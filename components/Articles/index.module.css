@@ -1,12 +1,10 @@
-/* パンクズ */
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  /* padding-top: 20px; */
+  margin: 20px 10px;
 }
 
 .breadcrumbList a {
-  /* color: #331cbf; */
   color: #000;
 }
 
