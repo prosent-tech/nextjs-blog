@@ -190,6 +190,12 @@
   }
 }
 
+.container {
+  padding: 20px 29px;
+  border: 1px solid #e4edf4;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 1160px) {
   .container {
     -webkit-font-smoothing: antialiased;

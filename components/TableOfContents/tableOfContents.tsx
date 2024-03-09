@@ -2,8 +2,8 @@ import styles from "./index.module.css";
 
 export default function TableOfContents({ toc }: any) {
   return (
-    <div className={styles.wrapper}>
-      <h4 className={styles.title}>目次</h4>
+    <div className={styles.tableOfContents}>
+      <p className={styles.title}>目次</p>
       <ul className={styles.lists}>
         {toc.map((data: any) => (
           <li

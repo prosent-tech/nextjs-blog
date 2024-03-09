@@ -9,6 +9,7 @@
   --font-family-ja: "Noto Sans JP", -apple-system, BlinkMacSystemFont,
     "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3",
     Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  --title-background-color: #25b4bf;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +25,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   color: #000;
+  background-color: #edf2f7;
   -webkit-font-smoothing: antialiased;
 }
 

@@ -8,7 +8,11 @@ export default function Topic({ topic }: any) {
     if (topic.fieldId === "article") {
       topic.article.publishedAt = new Date(
         topic.article.publishedAt,
-      ).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' });
+      ).toLocaleDateString("ja-JP", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
     }
   });
 

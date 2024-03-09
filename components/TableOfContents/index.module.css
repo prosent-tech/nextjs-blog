@@ -1,4 +1,4 @@
-.wrapper {
+.tableOfContents {
   border-radius: 5px;
   background-color: #f7f7fc;
   margin-bottom: 40px;
@@ -6,20 +6,20 @@
 }
 
 @media screen and (min-width: 1160px) {
-  .wrapper {
+  .tableOfContents {
     position: relative;
   }
 }
 
 @media screen and (min-width: 820px) and (max-width: 1160px) {
-  .wrapper {
+  .tableOfContents {
     margin-top: 40px;
     position: relative;
   }
 }
 
 @media screen and (max-width: 820px) {
-  .wrapper {
+  .tableOfContents {
     position: relative;
   }
 }

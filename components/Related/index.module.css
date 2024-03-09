@@ -16,9 +16,13 @@
   }
 }
 
+.relatedTitle {
+  background-color: var(--title-background-color);
+  color: #fff;
+}
+
 @media screen and (min-width: 1160px) {
   .relatedTitle {
-    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -29,7 +33,6 @@
 
 @media screen and (min-width: 520px) and (max-width: 1160px) {
   .relatedTitle {
-    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
@@ -40,7 +43,6 @@
 
 @media screen and (max-width: 520px) {
   .relatedTitle {
-    background-color: #eee;
     border-radius: 5px;
     font-size: 20px;
     font-weight: 700;
