@@ -127,22 +127,20 @@ export default function Article({ article }: any) {
               />
               <time dateTime={article.publishedAt}>{article.publishedAt}</time>
             </span>
-            <span className={styles.author}>
-              <Image
-                src="https://blog.microcms.io/images/icon_author.svg"
-                width={20}
-                height={20}
-                alt="Author"
-              />
-              {article.author}
-            </span>
+            {article.author != undefined && (
+              <span className={styles.author}>
+                <Image
+                  src="https://blog.microcms.io/images/icon_author.svg"
+                  width={20}
+                  height={20}
+                  alt="Author"
+                />
+                {article.author}
+              </span>
+            )}
           </div>
-
           {article.topic !== null && <TableOfContents toc={toc} />}
           <Topic topic={article.topic} />
-
-          {/* MEMO: 繰り返しにてリッチエディタを使用するため廃止 */}
-          {/* <RichEditor content={article.content} /> */}
         </div>
       </div>
     </article>

@@ -86,15 +86,17 @@ export const Articles: React.FC<ArticlesProps> = ({ articles }) => {
                         {article.publishedAt}
                       </time>
                     </span>
-                    <span className={styles.author}>
-                      <Image
-                        src="https://blog.microcms.io/images/icon_author.svg"
-                        width={20}
-                        height={20}
-                        alt=""
-                      />
-                      {article.author}
-                    </span>
+                    {article.author != undefined && (
+                      <span className={styles.author}>
+                        <Image
+                          src="https://blog.microcms.io/images/icon_author.svg"
+                          width={20}
+                          height={20}
+                          alt=""
+                        />
+                        {article.author}
+                      </span>
+                    )}
                   </div>
                 </dd>
               </dl>
