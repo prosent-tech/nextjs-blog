@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 import { getPathname } from "../../libs/utils";
 import rankingContents from "../../contents.json";
 import { Meta } from "@/components/Meta";
+import Profile from "@/components/Profile";
 
 export async function getStaticProps() {
   const newsData = await client.get({
@@ -67,6 +68,7 @@ export default function Home({
           <Ranking contents={rankingContents} />
           <Category category={category} />
           <Tag tag={tag} />
+          <Profile />
         </Aside>
       </Divider>
     </Layout>
