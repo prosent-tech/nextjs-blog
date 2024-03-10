@@ -7,7 +7,7 @@ export default function Header() {
       <div className={`${styles.headerContainer} ${styles.wrapper}`}>
         <span className={styles.headerLogo}>
           <Image
-            src="/logo.svg"
+            src="/otoku-navi.svg"
             alt="Mimipo Logo"
             width={98}
             height={28}
